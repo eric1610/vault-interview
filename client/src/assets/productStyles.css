@@ -1,0 +1,86 @@
+.card {
+  display: grid;
+  max-width: 280px;
+  justify-items: center;
+  padding: 0 15px 15px 15px;
+  border: 1px solid black;
+}
+
+.product-display {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: auto auto auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.product-picture {
+  display: flex;
+  width: 250px;
+  height: 250px;
+  align-items: center;
+}
+
+.header {
+  display: grid;
+  align-items: space-between;
+  grid-template-columns: 1fr auto;
+  padding: 10px;
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-gap: 20px;
+}
+
+.shopping-cart {
+  display: grid;
+  width: 300px;
+  border: 2px solid black;
+  grid-auto-rows: min-content;
+  grid-gap: 10px;
+}
+
+.shopping-cart > h3 {
+  text-align: center;
+  height: 30px;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: 10px;
+  margin-left: 10px;
+}
+
+.cart-item > h5 {
+  margin: 0px;
+}
+
+.cart-image {
+  width: 80px;
+  height: 80px;
+}
+
+.cart-item-display {
+  display: grid;
+  justify-content: space-between;
+}
+
+.cart-item-display > p {
+  display: inherit;
+  margin: 0px;
+  align-items: flex-end;
+  padding-bottom: 10px;
+}
+
+h5 {
+  margin: 0px;
+}
+
+.shopping-cart > p {
+  margin: 0px;
+}
