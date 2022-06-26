@@ -14,3 +14,7 @@ Go to server/ and run `npm start`. The server runs on port 3001.
 ### Start Frontend
 
 Go to client/ and run `npm start`. The server runs on port 3000. Go to localhost:3000 to see the shopping cart
+
+## Seeing Saved Changes
+
+When clicking on Save Cart, the backend server has to be restarted so that the correct file can be reloaded.
