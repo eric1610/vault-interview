@@ -7,12 +7,14 @@ type ShoppingCartType = {
   increaseCart: (product: ProductInfoType) => void;
   decreaseCart: (product: ProductInfoType) => void;
   removeCart: (product: ProductInfoType) => void;
+  cartError?: string;
 };
 const ShoppingCart = ({
   cart,
   increaseCart,
   decreaseCart,
   removeCart,
+  cartError = '',
 }: ShoppingCartType) => {
   const saveCart = useCallback(() => {
     const saveData = async () => {
@@ -33,6 +35,7 @@ const ShoppingCart = ({
   return (
     <div className="shopping-cart">
       <h3>Cart</h3>
+      {cartError.length > 0 && <h4>{cartError}</h4>}
       {cart.length === 0 ? (
         <h4>Empty Cart</h4>
       ) : (

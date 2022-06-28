@@ -7,6 +7,7 @@ import { ProductInfoType, CartType } from './Types';
 const Store = () => {
   const [cart, setCart] = useState<CartType[]>([]);
   const [cartVisible, setCartVisible] = useState<boolean>(false);
+  const [cartError, setCartError] = useState<string>('');
   const increaseCart = useCallback((product: ProductInfoType) => {
     setCart((prev) => {
       const prevCopy = [...prev];
@@ -58,14 +59,16 @@ const Store = () => {
   useEffect(() => {
     const fetchCart = async () => {
       try {
-        const data = await (await fetch('/loadCart')).json();
+        const data = await (await fetch('/getCart')).json();
         setCart([...data]);
       } catch (err) {
         setCart([]);
+        setCartError('Unable to load cart. Empty cart will be used.');
       }
     };
     fetchCart();
   }, []);
+  console.log(cartError, cartError.length);
   return (
     <div>
       <Header setCartVisible={setCartVisible} />
@@ -77,6 +80,7 @@ const Store = () => {
             increaseCart={increaseCart}
             decreaseCart={decreaseCart}
             removeCart={removeCart}
+            cartError={cartError}
           />
         )}
       </div>
